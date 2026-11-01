@@ -3,8 +3,8 @@ import { useId } from 'react'
 type Props = { size?: number; className?: string }
 
 /**
- * Velum brand mark: two translucent folds of a veil meeting in a "V",
- * with a sealed dot above, on a dusk-iris tile.
+ * Velum brand mark: two veil folds forming a "V", with a sealed dot
+ * between them, on a dusk-iris tile.
  */
 export function Logo({ size = 28, className }: Props) {
   const id = useId().replace(/[^a-zA-Z0-9]/g, '')
@@ -23,16 +23,16 @@ export function Logo({ size = 28, className }: Props) {
       <rect width="64" height="64" rx="15" fill={`url(#t${id})`} />
       <g transform="translate(9.6 9.6) scale(0.7)">
         <path
-          d="M7 9c9 1 17 6 21.5 14.5C31 28 32 34 32 55 25 48 15 40 10 30 6.5 23 5.5 15 7 9Z"
+          d="M5 11C8 30 20 46 32 57 28.5 44 25.5 27 22 11 16.5 7.5 10 7.5 5 11Z"
           fill={`url(#p${id})`}
           fillOpacity="0.85"
         />
         <path
-          d="M57 9c-9 1-17 6-21.5 14.5C33 28 32 34 32 55c7-7 17-15 22-25 3.5-7 4.5-15 3-21Z"
+          d="M59 11C56 30 44 46 32 57 35.5 44 38.5 27 42 11 47.5 7.5 54 7.5 59 11Z"
           fill={`url(#p${id})`}
           fillOpacity="0.85"
         />
-        <circle cx="32" cy="10" r="5" fill="#f1effa" />
+        <circle cx="32" cy="15" r="5.2" fill="#f1effa" />
       </g>
     </svg>
   )
