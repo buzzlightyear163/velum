@@ -1,0 +1,328 @@
+/* Additions for the local reconstruction (not part of the compiled reference styles). */
+
+/* Scroll reveal for static sections (mirrors the reference's fadeUp: 0.55s, ease .22,.8,.24,1). */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity 0.55s cubic-bezier(0.22, 0.8, 0.24, 1),
+    transform 0.55s cubic-bezier(0.22, 0.8, 0.24, 1);
+}
+[data-reveal].is-in {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ── Tutorial "videos": scripted product mock rendered at 760×427.5 and scaled to fit ── */
+.product-video .pv-stage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(90% 70% at 50% 0%, #ffffffcc 0%, transparent 70%),
+    radial-gradient(60% 60% at 100% 100%, var(--accent-soft) 0%, transparent 70%),
+    var(--mist);
+}
+.pv-canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 760px;
+  height: 427.5px;
+  transform-origin: 0 0;
+  transform: scale(var(--pv-s, 1));
+  display: grid;
+  place-items: center;
+}
+.pv-window {
+  width: 580px;
+  height: 344px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--lift);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 13px;
+  color: var(--fg);
+  text-align: left;
+}
+.pv-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+.pv-dots {
+  display: inline-flex;
+  gap: 5px;
+}
+.pv-dots i {
+  width: 8px;
+  height: 8px;
+  border-radius: 99px;
+  background: var(--line-strong);
+}
+.pv-title {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.pv-lock {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 3px 8px;
+  border-radius: 99px;
+}
+.pv-body {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px 18px;
+}
+.pv-thread {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+}
+.pv-thread .bubble {
+  align-self: flex-end;
+  font-size: 12.5px;
+  padding: 8px 12px;
+}
+.pv-thread .msg-receipt {
+  font-size: 11px;
+}
+.pv-composer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 7px 7px 7px 14px;
+  background: var(--surface);
+  box-shadow: var(--tactile);
+}
+.pv-input {
+  flex: 1;
+  min-width: 0;
+  font-size: 12.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pv-send {
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 99px;
+  display: grid;
+  place-items: center;
+  background: var(--fg);
+  color: #fff;
+}
+.pv-caret {
+  display: inline-block;
+  width: 1.5px;
+  height: 1em;
+  margin-left: 1px;
+  vertical-align: -2px;
+  background: var(--accent);
+  animation: blink 1s steps(1) infinite;
+}
+.pv-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pv-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  opacity: 0.5;
+  transition:
+    opacity 0.35s,
+    border-color 0.35s,
+    box-shadow 0.35s;
+}
+.pv-steps li.done {
+  opacity: 1;
+}
+.pv-steps li.now {
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow: var(--lift);
+}
+.pv-n {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--mist);
+  color: var(--accent);
+}
+.pv-steps li.done .pv-n,
+.pv-steps li.now .pv-n {
+  background: var(--accent);
+  color: #fff;
+}
+.pv-cipher {
+  margin-top: 4px;
+  font-size: 10.5px;
+  word-break: break-all;
+  color: var(--accent);
+  font-family: var(--font-code), ui-monospace, monospace;
+}
+.pv-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 99px;
+  background: var(--mist);
+  color: var(--accent);
+}
+.pv-chip.soft {
+  background: var(--panel);
+  color: var(--muted);
+  font-weight: 500;
+}
+.pv-agent {
+  margin-top: 0 !important;
+}
+.pv-agent li {
+  font-size: 12.5px;
+}
+.pv-result {
+  margin-top: 0 !important;
+  padding: 10px 12px !important;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.pv-reading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.pv-reading li,
+.pv-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.pv-note {
+  font-size: 12.5px;
+  color: var(--muted);
+}
+.pv-metric {
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+.pv-metric b {
+  font-family: var(--font-tight), sans-serif;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+}
+.pv-amount {
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-weight: 600;
+  background: var(--panel);
+  transition:
+    background 0.3s,
+    color 0.3s;
+}
+.pv-amount.on {
+  background: var(--night);
+  color: #fff;
+}
+.pv-vouchers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.pv-vouchers span {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  display: grid;
+  place-items: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.pv-credit {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--night);
+  color: #fff;
+}
+.pv-credit .label {
+  color: var(--night-muted);
+}
+.pv-progress {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  background: var(--accent);
+  opacity: 0.75;
+  transition: width 0.6s ease;
+}
+
+/* Utilities used by local components that the compiled reference CSS doesn't include. */
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.text-\[11\.5px\] {
+  font-size: 11.5px;
+}
+.z-30 {
+  z-index: 30;
+}
+@media (min-width: 861px) {
+  .min-\[861px\]\:hidden {
+    display: none;
+  }
+}

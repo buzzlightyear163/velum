@@ -1,0 +1,10 @@
+{
+  "name": "Velum",
+  "short_name": "Velum",
+  "description": "Chat, create images, run agents and read the chain, all in one private AI workspace.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f2f3f6",
+  "theme_color": "#f2f3f6",
+  "icons": [{ "src": "/assets/icon.svg", "sizes": "any", "type": "image/svg+xml" }]
+}
