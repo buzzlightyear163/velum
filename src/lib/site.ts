@@ -8,8 +8,8 @@ export const SITE = {
   xUrl: 'https://x.com/askvelum',
   githubUrl: 'https://github.com',
   tagline: 'Ask anything. Keep it private.',
-  /** Mint address. Leave empty until launch: the CA button then shows "Announced at launch". */
-  ca: (import.meta.env.VITE_CA ?? '').trim() as string,
+  /** Mint address (CA). VITE_CA overrides it; empty shows "Announced at launch". */
+  ca: (import.meta.env.VITE_CA || '8LGmkLJ4rPuEKrNMwKUd2LTrM1iesiQ8keLtaePNpump').trim() as string,
 }
 
 export const HOLD = `[N] ${SITE.ticker}`

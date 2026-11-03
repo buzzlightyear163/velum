@@ -21,5 +21,6 @@ Allt nedan stoppar inte projektet. Det är platser där Velum behöver eget mate
 - [ ] `VITE_CHAT_API`: LLM-proxy med streaming (`TODO(backend)` i `src/lib/chatApi.ts`).
 - [ ] `VITE_ACCESS_API`: waitlist-endpoint (`TODO(backend)` i `AccessForm.tsx`).
 - [ ] Verifiering av SIWS-signaturen på servern (`WalletContext.tsx`).
-- [ ] `VITE_CA` och `VITE_HOLD_MIN` vid launch (holder-gating), samt en egen RPC i `VITE_SOLANA_RPC`.
+- [x] CA: `8LGmkLJ4rPuEKrNMwKUd2LTrM1iesiQ8keLtaePNpump` (i `src/lib/site.ts`).
+- [ ] `VITE_HOLD_MIN` (holder-gating) och en egen RPC i `VITE_SOLANA_RPC`.
 - [ ] Top-up: USDC-betalning och privata vouchers (`Chat.tsx` / `VoucherCard`).
